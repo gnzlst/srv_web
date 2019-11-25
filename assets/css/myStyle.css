@@ -1,0 +1,104 @@
+* {
+  -webkit-border-radius: 0 !important;
+     -moz-border-radius: 0 !important;
+          border-radius: 0 !important;
+}
+
+body {
+    background-color: #f8f8f8;
+  }
+
+a.custom-card,
+a.custom-card:hover {
+  color: inherit !important;
+  Text-Decoration: None !important; 
+}
+
+.card-metro {
+  min-height: 360px;
+}
+
+.card-metro-menu {
+  min-width: 164px;
+  margin-right: 9px;
+}
+
+.card-metro-menu:hover {
+  opacity: 0.8;
+}
+
+.tafesaContent {
+  background-color: #be1428 !important;
+}
+
+.metroUI-light-green{
+  background-color: #99b433 !important;
+}
+
+.metroUI-green{
+  background-color: #00a300 !important;
+}
+
+.metroUI-dark-green{
+  background-color: #1e7145 !important;
+}
+
+.metroUI-magenta{
+  background-color: #ff0097 !important;
+}
+
+.metroUI-light-purple{
+  background-color: #9f00a7 !important;
+}
+
+.metroUI-purple{
+  background-color: #7e3878 !important;
+}
+
+.metroUI-dark-purple{
+  background-color: #603cba !important;
+}
+
+.metroUI-darken{
+  background-color: #1d1d1d !important;
+}
+
+.metroUI-teal{
+  background-color: #00aba9 !important;
+}
+
+.metroUI-light-blue{
+  background-color: #eff4ff !important;
+}
+
+.metroUI-blue{
+  background-color: #2d89ef !important;
+}
+
+.metroUI-dark-blue{
+  background-color: #2b5797 !important;
+}
+
+.metroUI-yellow{
+  background-color: #ffc40d !important;
+}
+
+.metroUI-orange{
+  background-color: #e3a21a !important;
+}
+
+.metroUI-dark-orange{
+  background-color: #da532c !important;
+}
+
+.metroUI-red{
+  background-color: #ee1111 !important;
+}
+
+.metroUI-dark-red{
+  background-color: #b91d47 !important;
+}
+
+.metroUI-white{
+  background-color: #ffffff !important;
+}

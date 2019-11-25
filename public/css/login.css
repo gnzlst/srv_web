@@ -1,0 +1,18 @@
+.bg-img {
+    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("../assets/img/tafesa-bg.PNG");
+    height: 100%;
+}
+
+.login-form {
+    color: #415159;
+    min-width: 180px;
+    opacity: 0.75;
+}
+
+.tafesaContent {
+    background-color: #be1428 !important;
+}

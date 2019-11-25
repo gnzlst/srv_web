@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {{> metas }}
+    <title>SRV - {{metaTags.title}}</title>
+    <link rel="icon" href="assets/img/favicon.ico">
+    <meta name="description" content="{{metaTags.description}}">
+    <meta name="keywords" content="{{metaTags.keywords}}">
+    {{> css }}
+    <link rel="stylesheet" href="{{css.file}}">
+</head>
+
+<body>
+    {{{ body }}}
+    {{> js }}
+</body>
+
+</html>

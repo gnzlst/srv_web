@@ -1,0 +1,21 @@
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.bgimg-1, .bgimg-2, .bgimg-3 {
+  position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+.bgimg-1 {
+  background-image: url("../img/tafesa-bg.PNG");
+  height: 100%;
+}
+
+.login-form {
+  min-width: 327px;  
+  opacity: 0.75;
+}

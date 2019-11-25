@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {{> administrator/metas }}
+    <title>SRV - {{metaTags.title}}</title>
+    <link rel="icon" href="/assets/img/favicon.ico">
+    <meta name="description" content="{{metaTags.description}}">
+    {{> administrator/css }}
+</head>
+
+<body>
+    <div class="app-container app-theme-white body-tabs-line fixed-sidebar fixed-header fixed-footer">
+        {{{ body }}}
+    </div>
+    {{> administrator/js }}
+</body>
+
+</html>

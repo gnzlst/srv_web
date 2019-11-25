@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {{> lecturer/metas }}
+    <title>SRV - {{metaTags.title}}</title>
+    <link rel="icon" href="/assets/img/favicon.ico">
+    <meta name="description" content="{{metaTags.description}}">
+    {{> lecturer/css }}
+</head>
+
+<body>
+    <div id="preloader">
+        <div class="colorlib-load"></div>
+    </div>
+    {{> lecturer/header }}
+    {{{body}}}
+    {{> lecturer/js }}
+    
+</body>
+
+</html>

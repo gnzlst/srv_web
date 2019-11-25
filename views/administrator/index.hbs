@@ -1,0 +1,493 @@
+{{> administrator/header }}
+<div class="app-main">
+    {{> administrator/sideBar }}
+    <div class="app-main__outer">
+        <div class="app-main__inner">
+            <div class="app-page-title">
+                <div class="page-title-wrapper">
+                    <div class="page-title-heading">
+                        <div class="page-title-icon">
+                            <i class="metismenu-icon pe-7s-rocket">
+                            </i>
+                        </div>
+                        <div>Analytics Dashboard
+                            <div class="page-title-subheading">This is the Dashboard for the Administrators of the SRV.
+                                Hope you enjot it!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-xl-4">
+                    <div class="card mb-3 widget-content bg-midnight-bloom">
+                        <div class="widget-content-wrapper text-white">
+                            <div class="widget-content-left">
+                                <div class="widget-heading">Total Administrators</div>
+                                <div class="widget-subheading">Registered Administrators</div>
+                            </div>
+                            <div class="widget-content-right">
+                                <div class="widget-numbers text-white"><span>
+                                        {{#if totalAdministators}}
+                                        {{#each totalAdministators}}
+                                        {{TotalAdministrators}}
+                                        {{/each}}
+                                        {{/if}}
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-xl-4">
+                    <div class="card mb-3 widget-content bg-arielle-smile">
+                        <div class="widget-content-wrapper text-white">
+                            <div class="widget-content-left">
+                                <div class="widget-heading">Total Lecturers</div>
+                                <div class="widget-subheading">Registered Lecturers</div>
+                            </div>
+                            <div class="widget-content-right">
+                                <div class="widget-numbers text-white"><span>
+                                        {{#if totalLecturers}}
+                                        {{#each totalLecturers}}
+                                        {{TotalLecturers}}
+                                        {{/each}}
+                                        {{/if}}
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-xl-4">
+                    <div class="card mb-3 widget-content bg-grow-early">
+                        <div class="widget-content-wrapper text-white">
+                            <div class="widget-content-left">
+                                <div class="widget-heading">Total Students</div>
+                                <div class="widget-subheading">Registered Students</div>
+                            </div>
+                            <div class="widget-content-right">
+                                <div class="widget-numbers text-white"><span>
+                                        {{#if totalStudents}}
+                                        {{#each totalStudents}}
+                                        {{TotalStudents}}
+                                        {{/each}}
+                                        {{/if}}
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 col-lg-6">
+                    <div class="mb-3 card">
+                        <div class="card-header-tab card-header-tab-animation card-header">
+                            <div class="card-header-title">
+                                <i class="header-icon lnr-apartment icon-gradient bg-love-kiss"> </i>
+                                Students ready for parchments out of total of students.
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="tab-content">
+                                <div class="tab-pane fade show active">
+                                    <div class="card mb-3 widget-chart widget-chart2 text-left w-100">
+                                        <div class="widget-chat-wrapper-outer">
+                                            <div class="widget-chart-wrapper widget-chart-wrapper-lg opacity-10 m-0">
+                                                <div class="chart" id="pie_basic" style="min-height: 450px;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 col-lg-6">
+                    <div class="mb-3 card">
+                        <div class="card-header-tab card-header">
+                            <div class="card-header-title">
+                                <i class="header-icon lnr-rocket icon-gradient bg-tempting-azure"> </i>
+                                Requested Parchments out of Parchments Ready.
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="tab-content">
+                                <div class="tab-pane fade active show">
+                                    <div class="card mb-3 widget-chart widget-chart2 text-left w-100">
+                                        <div class="widget-chat-wrapper-outer">
+                                            <div class="widget-chart-wrapper widget-chart-wrapper-lg opacity-10 m-0">
+                                                <div class="chart" id="pie_donut" style="min-height: 450px;">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="row">
+                <div class="col-md-6 col-xl-3">
+                    <div class="card mb-3 widget-content">
+                        <div class="widget-content-outer">
+                            <div class="widget-content-wrapper">
+                                <div class="widget-content-left">
+                                    <div class="widget-heading">Campuses</div>
+                                    <div class="widget-subheading">TAFESA Campuses</div>
+                                </div>
+                                <div class="widget-content-right">
+                                    <div class="widget-numbers text-success">
+                                        {{#if campuses}}
+                                        {{#each campuses}}
+                                        {{campusesFromDB}}
+                                        {{/each}}
+                                        {{/if}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-xl-3">
+                    <div class="card mb-3 widget-content">
+                        <div class="widget-content-outer">
+                            <div class="widget-content-wrapper">
+                                <div class="widget-content-left">
+                                    <div class="widget-heading">Qualifications</div>
+                                    <div class="widget-subheading">Total of Qualifications</div>
+                                </div>
+                                <div class="widget-content-right">
+                                    <div class="widget-numbers text-warning">
+                                        {{#if qualifications}}
+                                        {{#each qualifications}}
+                                        {{qualificationsFromDB}}
+                                        {{/each}}
+                                        {{/if}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-xl-3">
+                    <div class="card mb-3 widget-content">
+                        <div class="widget-content-outer">
+                            <div class="widget-content-wrapper">
+                                <div class="widget-content-left">
+                                    <div class="widget-heading">Competencies</div>
+                                    <div class="widget-subheading">Total of Competencies</div>
+                                </div>
+                                <div class="widget-content-right">
+                                    <div class="widget-numbers text-danger">
+                                        {{#if competencies}}
+                                        {{#each competencies}}
+                                        {{competenciesFromDB}}
+                                        {{/each}}
+                                        {{/if}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-xl-3">
+                    <div class="card mb-3 widget-content">
+                        <div class="widget-content-outer">
+                            <div class="widget-content-wrapper">
+                                <div class="widget-content-left">
+                                    <div class="widget-heading">Subjects</div>
+                                    <div class="widget-subheading">Total of Subjects</div>
+                                </div>
+                                <div class="widget-content-right">
+                                    <div class="widget-numbers text-focus">
+                                        {{#if subjects}}
+                                        {{#each subjects}}
+                                        {{subjectsFromDB}}
+                                        {{/each}}
+                                        {{/if}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{> administrator/footer }}
+    </div>
+</div>
+<script type="text/javascript">
+    var EchartsPiesDonuts = function () {
+
+
+        var _pieDonut = function () {
+            if (typeof echarts == 'undefined') {
+                console.warn('Warning - echarts.min.js is not loaded.');
+                return;
+            }
+
+            // Define elements
+            var pie_basic_element = document.getElementById('pie_basic');
+            var pie_donut_element = document.getElementById('pie_donut');
+
+
+            //
+            // Charts configuration
+            //
+
+            // Basic pie chart
+            if (pie_basic_element) {
+
+                // Initialize chart
+                var pie_basic = echarts.init(pie_basic_element);
+
+                //var parchmentReady = {{#if parchmentReady}}{{#each parchmentReady}}{{parchmentReadyTotal}}{{/each}}{{/if}}
+                var parchmentReady = {{#if parchmentReady }} {{ parchmentReady.length }} {{else}} 0 {{/if}};
+                var parchmentNotReady = {{#if parchmentNotReady }} {{ parchmentNotReady.length }} {{/if}};
+
+
+                        //
+                        // Chart config
+                        //
+
+                        // Options
+                        pie_basic.setOption({
+
+                            // Colors
+                            color: [
+                                '#07a2a4', '#9a7fd1', '#588dd5', '#f5994e', '#c05050',
+                                '#8d98b3', '#e5cf0d', '#97b552', '#95706d', '#dc69aa',
+                                '#2ec7c9', '#b6a2de', '#5ab1ef', '#ffb980', '#d87a80',
+                                '#59678c', '#c9ab00', '#7eb00a', '#6f5553', '#c14089'
+                            ],
+
+                            animationDuration: 3600,
+
+                            // Global text styles
+                            textStyle: {
+                                fontFamily: 'Roboto, Arial, Verdana, sans-serif',
+                                fontSize: 13
+                            },
+
+                            // Add title
+                            title: {
+                                text: 'Parchments Ready',
+                                subtext: 'Out of Total of Students',
+                                left: 'center',
+                                textStyle: {
+                                    fontSize: 17,
+                                    fontWeight: 500
+                                },
+                                subtextStyle: {
+                                    fontSize: 12
+                                }
+                            },
+
+                            // Add tooltip
+                            tooltip: {
+                                trigger: 'item',
+                                backgroundColor: 'rgba(0,0,0,0.75)',
+                                padding: [10, 15],
+                                textStyle: {
+                                    fontSize: 13,
+                                    fontFamily: 'Roboto, sans-serif'
+                                },
+                                formatter: "{a} <br/>{b}: {c} ({d}%)"
+                            },
+
+                            // Add legend
+                            legend: {
+                                orient: 'vertical',
+                                x: 'left',
+                                data: ['Ready', 'Not Ready'],
+                                itemHeight: 8,
+                                itemWidth: 8
+                            },
+
+                            // Add series
+                            series: [{
+                                name: 'Students',
+                                type: 'pie',
+                                radius: '70%',
+                                center: ['50%', '50%'],
+                                itemStyle: {
+                                    normal: {
+                                        borderWidth: 1,
+                                        borderColor: '#fff'
+                                    }
+                                },
+                                data: [
+                                    { value: parchmentNotReady, name: 'Not Ready' },
+                                    { value: parchmentReady, name: 'Ready' }
+                                ]
+                            }]
+                        });
+                    }
+
+                    // Basic donut chart
+                    if (pie_donut_element) {
+
+                        // Initialize chart
+                        var pie_donut = echarts.init(pie_donut_element);
+
+                        var parchmentRequested = 0;
+                        if ( {{#if parchmentRequested}} {{#each parchmentRequested }} {{ parchmentRequestedFromDB }} {{/each}}{{/if }} != 0) {
+                            parchmentRequested = {{#if parchmentRequested}} {{ parchmentRequested.length }} {{/if}};
+                        }
+
+                        var parchmentNotRequested = 0
+                        if ({{#if parchmentNotRequested}} {{#each parchmentNotRequested }} {{ parchmentNotRequestedFromDB }} {{/each}}{{/if }} != 0) {
+                            parchmentNotRequested = {{#if parchmentNotRequested}} {{ parchmentNotRequested.length }} {{/if}};
+                        }
+
+                        var parchmentReady = {{#if parchmentReady }} {{ parchmentReady.length }} {{else}} 0 {{/if}};
+                            //
+                            // Chart config
+                            //
+
+                            // Options
+                            pie_donut.setOption({
+
+                                // Colors
+                                color: [
+                                    '#8d98b3', '#e5cf0d', '#97b552', '#95706d', '#dc69aa',
+                                    '#2ec7c9', '#b6a2de', '#5ab1ef', '#ffb980', '#d87a80',
+                                    '#07a2a4', '#9a7fd1', '#588dd5', '#f5994e', '#c05050',
+                                    '#59678c', '#c9ab00', '#7eb00a', '#6f5553', '#c14089'
+                                ],
+
+                                animationDuration: 3600,
+
+                                // Global text styles
+                                textStyle: {
+                                    fontFamily: 'Roboto, Arial, Verdana, sans-serif',
+                                    fontSize: 13
+                                },
+
+                                // Add title
+                                title: {
+                                    text: 'Parchments requested',
+                                    subtext: 'Out of total of Parchment Ready ',
+                                    left: 'center',
+                                    textStyle: {
+                                        fontSize: 17,
+                                        fontWeight: 500
+                                    },
+                                    subtextStyle: {
+                                        fontSize: 12
+                                    }
+                                },
+
+                                // Add tooltip
+                                tooltip: {
+                                    trigger: 'item',
+                                    backgroundColor: 'rgba(0,0,0,0.75)',
+                                    padding: [10, 15],
+                                    textStyle: {
+                                        fontSize: 13,
+                                        fontFamily: 'Roboto, sans-serif'
+                                    },
+                                    formatter: "{a} <br/>{b}: {c} ({d}%)"
+                                },
+
+                                // Add legend
+                                legend: {
+                                    orient: 'vertical',
+                                    x: 'left',
+                                    data: ['Requested', 'Ready'],
+                                    itemHeight: 8,
+                                    itemWidth: 8
+                                },
+
+                                // Add series
+                                series: [{
+                                    name: 'Parchments',
+                                    type: 'pie',
+                                    radius: ['50%', '70%'],
+                                    center: ['50%', '50%'],
+                                    avoidLabelOverlap: false,
+                                    label: {
+                                        normal: {
+                                            show: false,
+                                            position: 'center'
+                                            },
+                                        emphasis: {
+                                            show: true,
+                                            textStyle: {
+                                                fontSize: '30',
+                                                fontWeight: 'bold'
+                                            }
+                                        }
+                                    },
+                                    labelLine: {
+                                        normal: {
+                                            show: false
+                                        }
+                                    },
+                                    itemStyle: {
+                                        normal: {
+                                            borderWidth: 1,
+                                            borderColor: '#fff'
+                                        }
+                                    },
+                                    data: [
+                                        { value: parchmentNotRequested, name: 'Ready' },
+                                        { value: parchmentRequested, name: 'Requested' }
+                                    ]
+                                }]
+                            });
+                        }
+
+                        //
+                        // Resize charts
+                        //
+
+                        // Resize function
+                        var triggerChartResize = function () {
+                            pie_basic_element && pie_basic.resize();
+                            pie_donut_element && pie_donut.resize();
+                        };
+
+                        // On sidebar width change
+                        $(document).on('click', '.sidebar-control', function () {
+                            setTimeout(function () {
+                                triggerChartResize();
+                            }, 0);
+                        });
+
+                        // On window resize
+                        var resizeCharts;
+                        window.onresize = function () {
+                            clearTimeout(resizeCharts);
+                            resizeCharts = setTimeout(function () {
+                                triggerChartResize();
+                            }, 200);
+                        };
+                    };
+
+
+                    //
+                    // Return objects assigned to module
+                    //
+
+                    return {
+                        init: function () {
+                            _pieDonut();
+                        }
+                    }
+                } ();
+
+
+                // Initialize module
+                // ------------------------------
+
+                document.addEventListener('DOMContentLoaded', function () {
+                    EchartsPiesDonuts.init();
+                });
+</script>

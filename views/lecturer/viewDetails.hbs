@@ -1,0 +1,116 @@
+<!-- ***** Wellcome Area Start ***** -->
+<section class="wellcome_area clearfix" id="home">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <div class="col-12 col-md">
+                <div class="wellcome-heading">
+                    <h2>TAFE Buddy</h2>
+                    <h3>TAFESA</h3>
+                    <p>Everything You Need In One place</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Welcome thumb -->
+</section>
+<!-- ***** Wellcome Area End ***** -->
+<!-- ***** Special Area Start ***** -->
+<section class="special-area bg-white section_padding_100" id="details">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <!-- Section Heading Area -->
+                <div class="section-heading text-center">
+                    <h2>Details</h2>
+                    <div class="line-shape"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Special Description Area -->
+    <div class="special_description_area">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="container-fluid">
+
+
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="/lecturers/index">Home</a></li>
+                                <li class="breadcrumb-item"><a href="/lecturers/index#srv">SRV</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">View Details</li>
+                            </ol>
+                        </nav>
+
+                        {{#if crns}}
+                        <table id="datatable-lecturer-details"
+                            class="table dataTable datatable-button-html5-columns-details collapsed display compact nowrap table-striped table-hover">
+                            <caption>Details</caption>
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>CRN</th>
+                                    <th>Tafe Comp Code</th>
+                                    <th>Term</th>
+                                    <th>Year</th>
+                                    <th>Grade</th>
+                                    <th>Grade Date</th>
+                                </tr>
+                                <tr class="hide-when-small">
+                                    <th>CRN</th>
+                                    <th>Tafe Comp Code</th>
+                                    <th>Term</th>
+                                    <th>Year</th>
+                                    <th>Grade</th>
+                                    <th>Grade Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {{#each crns}}
+                                <tr>
+                                    <td>{{CRN}}</td>
+                                    <td>{{TafeCompCode}}</td>
+                                    <td>{{TermCode}}</td>
+                                    <td>{{TermYear}}</td>
+                                    <td>{{Grade}}</td>
+                                    <td>{{timeagoFormatted GradeDate}}</td>
+                                </tr>
+                                {{/each}}
+                            </tbody>
+                            <tfoot class="thead-dark">
+                                <tr>
+                                    <th>CRN</th>
+                                    <th>Tafe Comp Code</th>
+                                    <th>Term</th>
+                                    <th>Year</th>
+                                    <th>Grade</th>
+                                    <th>Grade Date</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                        {{else}}
+                        <h3 class="text-center">Whoops... There are not CRNS for the selected student.</h3>
+                        {{/if}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ***** Footer Area Start ***** -->
+<footer class="footer-social-icon text-center section_padding_70 clearfix">
+    <!-- footer logo -->
+    <div class="footer-text">
+        <h2>SRV</h2>
+    </div>
+    <!-- social icon-->
+
+    <!-- Foooter Text-->
+    <div class="copyright-text">
+        <p>Copyright ©2019 SRV. Designed by <a href="https://github.com/thinn5/5WORK2019/" target="_blank">Team NAG</a>
+        </p>
+    </div>
+</footer>
+<!-- ***** Footer Area Start ***** -->
