@@ -68,7 +68,7 @@ MY_APP.use('/lecturers', require(PATH.join(ROUTES, 'lecturer', 'lecturer')));
 MY_APP.use('/students', require(PATH.join(ROUTES, 'student', 'student')));
 
 // Public static files
-MY_APP.use(EXPRESS.static(PUBLIC));
+MY_APP.use(EXPRESS.static(PUBLIC, { redirect: false }));
 MY_APP.use('/css', EXPRESS.static(PATH.join(PUBLIC, 'css')));
 MY_APP.use('/js', EXPRESS.static(PATH.join(PUBLIC, 'js')));
 MY_APP.use('/img', EXPRESS.static(PATH.join(PUBLIC, 'img')));
@@ -79,6 +79,6 @@ MY_APP.listen(MY_APP.get('port'), () => {
     console.log('Server automagically working on port : ' + MY_APP.get('port'));
 });
 
-MY_APP.get('*', function (req, res) {
+MY_APP.get('*', function(req, res) {
     res.redirect('/');
 });
