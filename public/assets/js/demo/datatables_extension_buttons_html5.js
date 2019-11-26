@@ -90,7 +90,7 @@ var DatatableButtonsHtml5 = function() {
                         className: 'btn btn-light',
                         text: '<i class="icon-file-pdf mr-2"></i> PDF',
                         exportOptions: {
-                            columns: [0, 1, 2, 3, 4, 5, 6]
+                            columns: [0, 1, 2, 3, 4, 5, 6, 7]
                         }
                     },
                     {
@@ -100,7 +100,7 @@ var DatatableButtonsHtml5 = function() {
                         fieldSeparator: '\t',
                         extension: '.csv',
                         exportOptions: {
-                            columns: [0, 1, 2, 3, 4, 5, 6]
+                            columns: [0, 1, 2, 3, 4, 5, 6, 7]
                         }
                     }
                 ]
@@ -109,10 +109,10 @@ var DatatableButtonsHtml5 = function() {
 
 
             initComplete: function() {
-                this.api().columns([0, 1, 2, 3, 4, 5, 6]).every(function() {
+                this.api().columns([0, 1, 2, 3, 4, 5, 6, 7]).every(function() {
                     var column = this;
                     var select = $('<select class="form-control filter-select"><option value=""></option></select>')
-                    //var select = $('<select><option value=""></option></select>')
+                        //var select = $('<select><option value=""></option></select>')
                         .appendTo($("#datatable-student thead tr:eq(1) th").eq(column.index()).empty())
                         .on('change', function() {
                             var val = $.fn.dataTable.util.escapeRegex(
@@ -158,7 +158,7 @@ var DatatableButtonsHtml5 = function() {
         });*/
 
         /*var table = */
-        $('.datatable-button-html5-columns-lecturer').DataTable({            
+        $('.datatable-button-html5-columns-lecturer').DataTable({
             orderCellsTop: true,
             dom: 'Bfrtip',
             order: [0, 'asc'],
@@ -193,7 +193,7 @@ var DatatableButtonsHtml5 = function() {
                 this.api().columns([0, 1, 2, 3, 4, 5, 6, 7]).every(function() {
                     var column = this;
                     var select = $('<select class="form-control filter-select"><option value=""></option></select>')
-                    //var select = $('<select class="form-control filter-select" data-placeholder="Filter"><option value=""></option></select>')
+                        //var select = $('<select class="form-control filter-select" data-placeholder="Filter"><option value=""></option></select>')
                         .appendTo($("#datatable-lecturer thead tr:eq(1) th").eq(column.index()).empty())
                         .on('change', function() {
                             var val = $.fn.dataTable.util.escapeRegex(
@@ -208,7 +208,7 @@ var DatatableButtonsHtml5 = function() {
                     column.data().unique().sort().each(function(d, j) {
                         var val = $('<div/>').html(d).text();
                         select.append('<option value="' + val.trim() + '">' + val.trim() + '</option>')
-                        //select.append('<option value="' + d + '">' + d + '</option>')
+                            //select.append('<option value="' + d + '">' + d + '</option>')
                     });
                 });
             }
@@ -252,7 +252,7 @@ var DatatableButtonsHtml5 = function() {
                 this.api().columns([0, 1, 2, 3, 4, 5]).every(function() {
                     var column = this;
                     var select = $('<select class="form-control filter-select"><option value=""></option></select>')
-                    //var select = $('<select><option value=""></option></select>')
+                        //var select = $('<select><option value=""></option></select>')
                         .appendTo($("#datatable-lecturer-details thead tr:eq(1) th").eq(column.index()).empty())
                         .on('change', function() {
                             var val = $.fn.dataTable.util.escapeRegex(
