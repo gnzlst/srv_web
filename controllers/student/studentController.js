@@ -10,7 +10,7 @@ const TABLE_STUDENT_STUDY_PLAN = 'student_studyplan s';
 const TABLE_QUALIFICATION = 'qualification q';
 const TABLE_USER = 'user u';
 
-const FIELDS_CRN = 'sg.UserID, CRN, sg.TafeCompCode, sg.TermCode, sg.TermYear, sg.Grade, UNIX_TIMESTAMP(GradeDate) AS GradeDate, (SELECT q.QualName FROM student_studyplan ss INNER JOIN qualification q ON ss.QualCode = q.QualCode WHERE ss.UserID = ?) as Qualification';
+const FIELDS_CRN = 'sg.UserID, CRN, sg.TafeCompCode, sg.TermCode, sg.TermYear, sg.Grade, UNIX_TIMESTAMP(GradeDate) AS GradeDate, (SELECT q.QualName FROM student_studyplan ss INNER JOIN qualification q ON ss.QualCode = q.QualCode WHERE ss.UserID = ?) as Qualification, (SELECT QualCode FROM student_studyplan ss WHERE ss.UserID = ?) as QualificationCode';
 
 const FIELDS = 'u.UserID, u.GivenName, u.LastName, u.EmailAddress, s.QualCode, q.QualName';
 
@@ -28,9 +28,9 @@ const LIST = 'SELECT ' + FIELDS + ' FROM ' + TABLE_USER +
 
 const PARCHMENT_REQUEST = 'UPDATE ' + TABLE_USER + ' SET ParchmentRequest = 1 WHERE ' + FIELD_ID + ' = ?';
 
-CONTROLLER.index = async (req, res) => {
+CONTROLLER.index = async(req, res) => {
     const myUserId = req.user.UserID;
-    const crns = await POOL.query(LIST_CRN, [myUserId, myUserId]);
+    const crns = await POOL.query(LIST_CRN, [myUserId, myUserId, myUserId]);
     const progress = await POOL.query(LIST_PROGRESS, [myUserId, myUserId]);
     const studentData = await POOL.query(LIST, myUserId);
     res.locals.metaTags = {
@@ -40,7 +40,7 @@ CONTROLLER.index = async (req, res) => {
     res.render(PATH.join(VIEW, 'index'), { crns: crns, progress: progress, studentData: studentData, layout: LAYOUT });
 };
 
-CONTROLLER.viewDetails = async (req, res) => {
+CONTROLLER.viewDetails = async(req, res) => {
     const crns = await POOL.query(LIST_CRN, req.params.id);
     res.locals.metaTags = {
         title: "Details",
@@ -49,7 +49,7 @@ CONTROLLER.viewDetails = async (req, res) => {
     res.render(PATH.join(VIEW, 'viewDetails'), { crns: crns, layout: LAYOUT });
 };
 
-CONTROLLER.parchmentRequest = async (req, res) => {
+CONTROLLER.parchmentRequest = async(req, res) => {
     const myUserId = req.user.UserID;
     const crns = await POOL.query(LIST_CRN, [myUserId, myUserId]);
     const progress = await POOL.query(LIST_PROGRESS, [myUserId, myUserId]);
