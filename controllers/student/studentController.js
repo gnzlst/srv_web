@@ -54,7 +54,6 @@ CONTROLLER.parchmentRequest = async(req, res) => {
     const crns = await POOL.query(LIST_CRN, [myUserId, myUserId, myUserId]);
     const progress = await POOL.query(LIST_PROGRESS, [myUserId, myUserId]);
     const studentData = await POOL.query(LIST, myUserId);
-
     await POOL.query(PARCHMENT_REQUEST, myUserId);
     const showAlert = 1;
     res.locals.metaTags = {
