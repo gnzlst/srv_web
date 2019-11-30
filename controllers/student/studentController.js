@@ -51,7 +51,7 @@ CONTROLLER.viewDetails = async(req, res) => {
 
 CONTROLLER.parchmentRequest = async(req, res) => {
     const myUserId = req.user.UserID;
-    const crns = await POOL.query(LIST_CRN, [myUserId, myUserId]);
+    const crns = await POOL.query(LIST_CRN, [myUserId, myUserId, myUserId]);
     const progress = await POOL.query(LIST_PROGRESS, [myUserId, myUserId]);
     const studentData = await POOL.query(LIST, myUserId);
 
